@@ -1,0 +1,158 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          import math
+def add(x,y):
+    return x+y
+def sub(x,y):
+    return x-y
+def mul(*args):
+    x=1
+    for arg in args:
+        x=x*arg
+    return x 
+def div(x,y):
+    try:
+        m=x/y
+    except ZeroDivisionError:
+         return "error"
+    return m
+def log(x,y):
+    l=0
+    g=y
+def exp(x,y):
+    z=x**y
+    return z
+    while True:
+        
+        
+        if y>1:
+            
+            y=y/x
+            l=l+1
+        elif y==1:
+            print(l)
+            break
+        else: 
+          print(f'''{x} is not a root to {g}''')
+          break
+def sqr(x):
+    return math.sqrt(x)
+def delta(a,b,c):
+    return b**2-4*a*c
+          
+def exp(e,x):
+    return e**x        
+while True:
+    print('''chose operation
+    1.div    2.add
+    3.sub    4.mul
+    5.log    6.sqrt
+    7.abs    8.delta
+    9.exp
+    10.shut done''')
+    m=input()
+    if m=="div" or m =="1":
+       m=None
+       print(div(int(input("enter numbers")),int(input("\nthe other one\n")))) 
+       print("want continue")
+    elif m =="add"or m=="2":
+        x=int(input("enter numbers then stop"))
+        y=0
+        while True:
+            if x != "stop" :
+               x=int(x)
+               y=y+x
+               x=input()
+            elif x=="stop":
+                print(f'''
+                 {y}''')
+                print("want continue")
+                break
+    elif m=="sub"or m=="3":
+          m=None
+          print(sub(int(input("enter numbers")),int(input("\ntheother one\n"))))
+          print("want continue")
+    elif m=="mul" or m=="4":
+         x=float(input("enter factors"))
+         y=1
+         while True:
+             if x!="stop":
+                 x=float(x)
+                 y=y*x
+                 x=input()
+             elif x=="stop":
+                  print(f''' 
+                       {y}''')
+                  print("want to continue")
+                  break
+    elif m=="stop"or m =="10":  
+      break
+    elif m == "log" or m== "5":
+        print(log(int(input("enter root")),int(input("\nenter multiplay\n"))))
+          
+    elif m == "sqrt" or m=="6":
+         print(math.sqrt(float(input("enter number\n"))))
+         
+    elif m=="abs" or m== "7":
+        print(abs(float(input("enter number\n"))))
+        
+    elif m in["delta", "8"]:
+        a=int(input("enter number a\n"))
+        b=int(input("enter b\n"))
+        c=int(input("enter c\n"))
+        d=delta(a,b,c)
+        print(d)
+        if d >0:
+            print("there is two sloutions")
+            x1=-b-math.sqrt(d)/2*a
+            x2=-b+math.sqrt(d)/2*a
+            print(f'x1={x1} x2={x2}')
+            
+        
+        elif d == 0:
+            print("there is one solutin :")
+            print(-b/2*a)
+            
+        else:
+            print("no solution")
+            
+        
+    elif  m == "exp" or m =="9":
+        print(exp(int(input("enter number\n")),int(input("enter power\n"))))
+    
+        
+                    
